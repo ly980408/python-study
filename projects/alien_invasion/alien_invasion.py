@@ -1,11 +1,11 @@
-import sys
-
 import pygame
 from pygame.sprite import Group
 
 from settings import Settings
 from ship import Ship
 from alien import Alien
+from game_stats import GameStats
+from button import Button
 import game_functions as gf
 
 
@@ -24,18 +24,25 @@ def run_game():
     aliens = Group()
     gf.create_fleet(ai_settings, screen, ship, aliens)
 
+    # 统计实例
+    stats = GameStats(ai_settings)
+
+    #
+    play_button = Button(ai_settings, screen, "Play")
+
     # 开始游戏主循环
     while True:
 
         # 监视键盘和鼠标事件
-        gf.check_events(ai_settings, screen, ship, bullets)
-        # 更新飞船
-        ship.update()
-        gf.update_bullets(bullets)
-        gf.update_aliens(aliens)
+        gf.check_events(ai_settings, screen, stats, ship, aliens, bullets, play_button)
+
+        if stats.game_active:
+            ship.update()
+            gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
+            gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
 
         # 重绘屏幕
-        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
+        gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button)
 
 
 run_game()

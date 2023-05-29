@@ -1,6 +1,7 @@
 import pygame
 from settings import Settings
 
+
 class Ship():
 
     def __init__(self, ai_settings: Settings, screen):
@@ -36,3 +37,6 @@ class Ship():
             self.center -= self.ai_settings.ship_speed_factor
 
         self.rect.centerx = self.center
+
+    def center_ship(self):
+        self.center = self.screen_rect.centerx
