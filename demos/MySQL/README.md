@@ -4,6 +4,8 @@
 
 ### 安装MySQL
 
+https://dev.mysql.com/downloads/
+
 ### 配置MySQL
 
 在安装目录下创建`my.ini`
