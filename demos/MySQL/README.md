@@ -15,10 +15,10 @@
 port = 3306
 
 # mysql path
-basedir = D:\\mysql-5.7.31-winx64
+basedir = D:\\mysql
 
 # database path
-datadir = D:\\mysql-5.7.31-winx64\\data
+datadir = D:\\mysql\\data
 ```
 
 ### 连接MySQL
@@ -26,13 +26,13 @@ datadir = D:\\mysql-5.7.31-winx64\\data
 使用MySQL自带工具测试连接
 
 ```shell
-"D:\mysql-5.7.31-winx64\bin\mysql.exe" -h 127.0.0.1 -P 3306 -u root -p
+"D:\mysq\bin\mysql.exe" -h 127.0.0.1 -P 3306 -u root -p
 ```
 
 连接本机默认端口，可简写为：
 
 ```shell
-"D:\mysql-5.7.31-winx64\bin\mysql.exe" -u root -p
+"D:\mysql\bin\mysql.exe" -u root -p
 ```
 
 添加环境变量后：
@@ -120,54 +120,39 @@ create table user_table
 > - time
 >
 > 参考:
-> https://dev.mysql.com/doc/refman/5.7/en/data-types.html
-> https://www.runoob.com/mysql/mysql-data-types.html
-> https://www.w3school.com.cn/sql/sql_datatypes.asp
-> http://c.biancheng.net/sql/data-types.html
+> - https://dev.mysql.com/doc/refman/5.7/en/data-types.html
+> - https://www.runoob.com/mysql/mysql-data-types.html
+> - https://www.w3school.com.cn/sql/sql_datatypes.asp
 
 ### 数据行(Rows)
 
 - 新增数据：
 
 ```sql
-insert into 表名(列名1, 列名2, ..., 列名N)
-values (值1, 值2, ..., 值N);
+insert into 表名(列名1, 列名2, ..., 列名N) values (值1, 值2, ..., 值N);
 ```
 
 - 删除数据：
 
 ```sql
-delete
-from 表名;
-delete
-from 表名
-where 条件;
+delete from 表名;
+delete from 表名 where 条件;
 ```
 
 - 修改数据：
 
 ```sql
-update 表名
-set 列 = 值;
-update 表名
-set 列1 = 值1,
-    列2 = 值2;
-update 表名
-set 列1 = 值1,
-    列2 = 值2
-where 条件;
+update 表名 set 列 = 值;
+update 表名 set 列1 = 值1, 列2 = 值2;
+update 表名 set 列1 = 值1, 列2 = 值2 where 条件;
 ```
 
 - 查询数据：
 
 ```sql
-select *
-from 表名; -- 查询所有数据
-select 列名1, 列名2
-from 表名;
-select 列名1, 列名2
-from 表名
-where 条件;
+select * from 表名; -- 查询所有数据
+select 列名1, 列名2 from 表名;
+select 列名1, 列名2 from 表名 where 条件;
 ```
 
 ## Python操作MySQL
