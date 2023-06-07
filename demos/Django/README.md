@@ -2,11 +2,19 @@
 
 ## 安装Django
 
+> 以Windows系统为例
+
 ```shell
 pip install django
 ```
 
-安装成功后会在 Python 安装目录下的 Scripts 文件夹中生成一个 `django-admin.exe` 文件（Windows系统）
+注意：Django 4.2 版本以后只支持 MySQL 8 及以上版本，因为我本地安装的 MySQL 版本是 5.7，所以安装了 4.1 版本的 Django
+
+```shell
+pip install django==4.1
+```
+
+安装成功后会在 Python 安装目录下的 Scripts 文件夹中生成一个 `django-admin.exe` 文件
 
 ## 创建Django项目
 
@@ -57,9 +65,26 @@ myapp
 
 https://docs.djangoproject.com/zh-hans/4.2/intro/tutorial01/
 
+常用命令：
+
+- 创建迁移
+`python manage.py makemigrations`
+
+- 执行迁移
+`python manage.py migrate`
+
+- 添加 super user
+`python manage.py createsuperuser`
+
+- 启动服务
+`python manage.py runserver`
+
+- 启动 Python 交互式解释器
+`python manage.py runserver`
+
 ## 数据库操作
 
-> ORM
+> 使用 MySQL 为例
 
 - 安装mysqlclient
   `pip install mysqlclient`
