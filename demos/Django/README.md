@@ -80,7 +80,7 @@ https://docs.djangoproject.com/zh-hans/4.2/intro/tutorial01/
 `python manage.py runserver`
 
 - 启动 Python 交互式解释器
-`python manage.py runserver`
+`python manage.py shell`
 
 ## 数据库操作
 
