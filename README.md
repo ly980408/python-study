@@ -15,4 +15,6 @@ My python study notes.
 
 ## 项目练习
 
-- [alien_invasion](projects/alien_invasion/): 外星人入侵，Pygame游戏项目
+- Games
+
+  - [alien_invasion](projects/games/alien_invasion/): 外星人入侵，Pygame游戏项目
