@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Question Detail</title>
+    <title>Detail</title>
 </head>
 <body>
 <a href="javascript:window.history.back()">&lt; Back</a>
-<a href="{% url 'polls:index' %}" style="float: right">List</a>
+<a href="{% url 'polls:index' %}" style="margin-left: 8px;">Home</a>
 <form action="{% url 'polls:vote' question.id %}" method="post">
     {% csrf_token %}
     <fieldset>
